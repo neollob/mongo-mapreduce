@@ -51,7 +51,9 @@ db.movies.find(
 
 var mapdirectores=function(){
   if (this.director){
-    if (this.awards.indexOf("Won")>=0){
+    if (this.awards.text.indexOf(/\won \d+ oscar/i)>=0){
+        this.awards.text.split(" ");
+    
       emit({director:this.director.split(',')},this.awards);
     }
   }
