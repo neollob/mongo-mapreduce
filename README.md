@@ -50,7 +50,7 @@ db.movies.find(
 ).pretty()
 
 var mapdirectores=function(){
-  if (this.director){
+  if ((this.director)&&(this.awards)){
     if (this.awards.text.indexOf(/\won \d+ oscar/i)>=0){
         this.awards.text.split(" ");
     
